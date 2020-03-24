@@ -6,5 +6,5 @@ Soon to be completed. If beside yourself with impatience, please build it yourse
 
 ### **Database info**
 
-Mocking Database Nm : listing
+Mocking Database Nm : **listing** (to be changed to *MakersBnb*)
 Table name : spaces
