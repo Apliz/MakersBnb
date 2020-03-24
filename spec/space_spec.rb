@@ -7,6 +7,7 @@ describe Space do
     it 'creates a new space' do
       space = Space.create(name: '42 Evergreen Terrace', description: 'semi-detached', price: '10', date_from: '2020-03-01', date_to: '2020-03-02')
       persisted_data = persisted_data(id: space.id, table: 'spaces')
+      
       expect(space).to be_a Space
       expect(space.id).to eq persisted_data.first['id']
       expect(space.name).to eq('42 Evergreen Terrace')
