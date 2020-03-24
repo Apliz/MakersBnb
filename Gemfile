@@ -13,6 +13,7 @@ group :development, :test do
   gem "rubocop", "0.79.0"
 end
 
+gem "pg"
 gem "sinatra"
 # TO DO add something to control the database
 # TO DO add any more gems that we might need as required.
