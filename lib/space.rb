@@ -13,7 +13,7 @@ class Space
   end
 
   def self.all
-    connection = PG.connect(dbname: 'makers_bnb')
+    connection = PG.connect(dbname: 'makers_bnb_test')
     result = connection.exec("SELECT * FROM spaces;")
     result.map do |place|
       Space.new(

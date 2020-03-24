@@ -9,3 +9,4 @@ feature 'spaces' do
       expect(page).to have_content('42 Evergreen Terrace')
     end
 end
+  

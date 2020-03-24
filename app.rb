@@ -1,7 +1,10 @@
 require "sinatra/base"
 require './lib/space'
 
+
 class MakersBnB < Sinatra::Base
+  enable :sessions
+
   get "/test" do
     "Testing infrastructure: self.code"
   end
@@ -16,8 +19,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/spaces" do
-    puts params[:name]
-    puts params[:description]
+    Space.create(name: params[:name], description: params[:description])
+    redirect :'spaces'
   end
   
   run! if app_file == $0
