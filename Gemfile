@@ -11,8 +11,10 @@ group :development, :test do
   gem "capybara"
   gem "rspec"
   gem "rubocop", "0.79.0"
+  gem "pg"
 end
 
+gem "pg"
 gem "sinatra"
 # TO DO add something to control the database
 # TO DO add any more gems that we might need as required.
