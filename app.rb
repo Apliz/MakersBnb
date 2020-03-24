@@ -1,5 +1,5 @@
 require "sinatra/base"
-require './lib/spaces'
+require './lib/space'
 
 class MakersBnB < Sinatra::Base
   get "/test" do

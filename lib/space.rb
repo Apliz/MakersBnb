@@ -1,20 +1,23 @@
 require 'pg'
 class Space
-  attr_reader :user_id, :name, :description, :price, :date_from, :date_to
-  def initialize(user_id:, name:, description:, price:, date_from:, date_to:)
-    @user_id = user_id
+
+  attr_reader :id, :name, :description, :price, :date_from, :date_to
+
+  def initialize(id:, name:, description:, price:, date_from:, date_to:)
+    @id = id
     @name = name
     @description = description
     @price = price
     @date_from = date_from
     @date_to = date_to
   end
-  def self.all 
-    connection = PG.connect(dbname: 'listing')
+
+  def self.all
+    connection = PG.connect(dbname: 'makers_bnb')
     result = connection.exec("SELECT * FROM spaces;")
     result.map do |place|
       Space.new(
-        user_id: place['user_id'],
+        id: place['id'],
         name: place['name'],
         description: place['description'],
         price: place['price'],
@@ -23,4 +26,9 @@ class Space
       )
     end
   end
+
+  def self.create
+    
+  end
+
 end
