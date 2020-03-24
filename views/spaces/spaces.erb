@@ -1,0 +1,17 @@
+<div>
+<ol>
+  <% @spaces.each do |space| %>
+    <li>
+      <%= space.name %><br>
+      <ul>
+        <li>
+          <%= space.description %><br>
+          £<%= space.price %> p/Nanosecond<br>
+          <%= space.date_from %><br>
+          <%= space.date_to %>
+        </li>
+      </ul>
+    </li><br>
+  <% end %>
+</ol>
+</div>

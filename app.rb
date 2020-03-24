@@ -1,5 +1,6 @@
 require "sinatra/base"
 require './lib/space'
+require './database_connection_setup'
 
 
 class MakersBnB < Sinatra::Base
@@ -10,8 +11,8 @@ class MakersBnB < Sinatra::Base
   end
 
   get "/spaces" do
-    @space = Space.all
-    erb(:index)
+    @spaces = Space.all
+    erb :'spaces/spaces'
   end
   
   get "/spaces/new" do
@@ -19,7 +20,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/spaces" do
-    Space.create(name: params[:name], description: params[:description])
+    Space.create(name: params[:name], description: params[:description], price: params[:price], date_from: params[:date_from], date_to: params[:date_to])
     redirect :'spaces'
   end
   

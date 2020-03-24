@@ -3,9 +3,13 @@ require 'spec_helper'
 
 feature 'spaces' do
     scenario 'shows an element from spaces Db correctly' do
-      connection = PG.connect( dbname: 'makers_bnb_test')
+      Space.create(name: '14 Blue Lane', description: 'semi-detached', price: 14, date_from: '2020-03-01', date_to: '2020-03-20')
+      Space.create(name: '1 Red Lane', description: 'apartment', price: 14, date_from: '2020-03-01', date_to: '2020-03-20')
+
       visit '/spaces'
-      connection.exec("INSERT INTO spaces(name, description, price, date_from, date_to) VALUES ('42 Evergreen Terrace', 'semi-detached', 10, '2020-03-01', '2020-03-02');")
-      expect(page).to have_content('42 Evergreen Terrace')
+       
+      expect(page).to have_content('14 Blue Lane')
+      expect(page).to have_content('1 Red Lane')
+
     end
 end
