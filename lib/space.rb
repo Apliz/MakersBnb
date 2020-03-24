@@ -1,4 +1,5 @@
-require 'pg'
+
+require_relative 'database_connection'
 class Space
 
   attr_reader :id, :name, :description, :price, :date_from, :date_to
@@ -13,8 +14,7 @@ class Space
   end
 
   def self.all
-    connection = PG.connect(dbname: 'makers_bnb')
-    result = connection.exec("SELECT * FROM spaces;")
+    result = DatabaseConnection.query("SELECT * FROM spaces;")
     result.map do |place|
       Space.new(
         id: place['id'],
@@ -27,8 +27,16 @@ class Space
     end
   end
 
-  def self.create
-    
+  def self.create(name:, description:, price:, date_from:, date_to:)
+    result = DatabaseConnection.query("INSERT INTO spaces (name, description, price, date_from, date_to) VALUES('#{name}', '#{description}', '#{price}', '#{date_from}', '#{date_to}') RETURNING id, name, description, price, date_from, date_to;")
+    Space.new(
+      id: result[0]['id'], 
+      name: result[0]['name'],
+      description: result[0]['description'],
+      price: result[0]['price'],
+      date_from: result[0]['date_from'],
+      date_to: result[0]['date_to']
+      )
   end
 
 end
