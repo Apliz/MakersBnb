@@ -1,5 +1,8 @@
 <% if @user %>
 <h1>Welcome, <%=@user.name%>!</h1>
+<form action="/sessions/destroy" method="post">
+    <input type="submit" value="Log Out" />
+  </form>
 <% end %>
 <div>
 <ol>
