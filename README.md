@@ -103,5 +103,5 @@ The following diagrams are available in `./assets`
 | Lila Walker | Scrum master | Leader | Technician | Helper | Ideas |
 | Liam Roberts | Scribe | Scrum master | Leader | Technician | Helper |
 | Daria Thompson | Ideas | Scribe | Scrum master | Leader | Technician |
-| Anton ~~Jalapeño III~~ Plisnier | Helper | Ideas | Scribe | Scrum master | Leader |
+| Anton Plisnier | Helper | Ideas | Scribe | Scrum master | Leader |
 | John Baxter | Technician | Helper | Ideas | Scribe | Scrum master |
