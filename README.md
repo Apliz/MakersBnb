@@ -11,8 +11,7 @@ $ bundle install
 
 # To set up DataBase
 ## First setup (if user does not have PostgreSQL installed)
-You should have HomeBrew installed\
-brew.sh
+You should have [HomeBrew](https://brew.sh) installed
 ## Install PostgreSQL
 ```
 $ brew install postgresql
