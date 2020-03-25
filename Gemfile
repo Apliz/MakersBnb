@@ -13,6 +13,7 @@ group :development, :test do
   gem "rubocop", "0.79.0"
 end
 
+gem 'bcrypt'
 gem "pg"
 gem "sinatra"
 # TO DO add any more gems that we might need as required.
