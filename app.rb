@@ -39,7 +39,7 @@ class MakersBnB < Sinatra::Base
 
   post '/sessions/destroy' do
     session.clear
-    redirect :'spaces'
+    redirect '/'
   end
 
   get "/spaces" do
