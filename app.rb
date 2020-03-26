@@ -4,7 +4,6 @@ require './lib/user'
 require './database_connection_setup'
 require 'sinatra/flash'
 
-
 class MakersBnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
@@ -47,7 +46,7 @@ class MakersBnB < Sinatra::Base
     @spaces = Space.all
     erb :'spaces/spaces'
   end
-  
+
   get "/spaces/new" do
     erb :'spaces/new'
   end
@@ -56,7 +55,16 @@ class MakersBnB < Sinatra::Base
     Space.create(name: params[:name], description: params[:description], price: params[:price], date_from: params[:date_from], date_to: params[:date_to])
     redirect :'spaces'
   end
-  
+
+  get "/spaces/calendar" do
+    erb :"spaces/calendar"
+  end
+
+  post "/calendar" do
+    p date_start = Date.parse(params[:trip_start]).strftime('%Y-%m-%d')
+    p date_end = Date.parse(params[:trip_end]).strftime('%Y-%m-%d')
+    redirect :'spaces/calendar'
+  end
+
   run! if app_file == $0
 end
- 
