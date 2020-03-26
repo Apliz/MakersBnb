@@ -21,7 +21,8 @@ class MakersBnB < Sinatra::Base
       name: params['name'],
       username: params['username'],
       email: params['email'],
-      password: params['password'])
+      password: params['password']
+      )
     session[:user_id] = user.id
     redirect :'spaces'
   end
@@ -53,18 +54,38 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/spaces" do
-    Space.create(name: params[:name], description: params[:description], price: params[:price], date_from: params[:date_from], date_to: params[:date_to])
+    Space.create(
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
+      date_from: params[:date_from],
+      date_to: params[:date_to],
+      user_id: session[:user_id]
+      )
     redirect :'spaces'
   end
 
   get "/spaces/calendar" do
+    @space_id = session[:space_id]
     erb :"spaces/calendar"
   end
 
   post "/calendar" do
-    p @date_start = Date.parse(params[:trip_start]).strftime('%Y-%m-%d')
-    p @date_end = Date.parse(params[:trip_end]).strftime('%Y-%m-%d')
-    Booking.create(start_date: @date_start, end_date: @date_end)
+    session[:space_id]
+    session[:user_id]
+    @date_start = Date.parse(params[:trip_start]).strftime('%Y-%m-%d')
+    @date_end = Date.parse(params[:trip_end]).strftime('%Y-%m-%d')
+    Booking.create(
+      start_date: @date_start,
+      end_date: @date_end,
+      space_id: session[:space_id],
+      user_id: session[:user_id]
+      )
+    redirect :'spaces/calendar'
+  end
+
+  post '/to_calendar' do
+    session[:space_id] = params[:space_id]
     redirect :'spaces/calendar'
   end
 
