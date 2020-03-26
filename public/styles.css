@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 body {
+  margin: 0;
+  min-height: 100%;
   font-family: "Roboto", sans-serif;
 }
-
+html{
+  height: 100%;
+}
 input {
   width: 70vw;
   margin-top: 20px;
@@ -27,6 +31,7 @@ textarea {
 }
 
 .form {
+  background-color: rgba(255, 255, 255, 0.7);
   width: 90vw;
   display: block;
   height: 70vh;
@@ -72,6 +77,18 @@ ul{
 .item{
   min-width: 350px;
   margin-top: 30px;
+}
+.spaces-page{
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0) url('http://cdn.home-designing.com/wp-content/uploads/2015/08/attic-living-room.jpg') no-repeat 50%;
+  background-size: cover; 
+}
+.add-new-space-page{
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0) url('https://66.media.tumblr.com/1632de4cd77b2b8ff7086682539df863/234a6d217fc5e978-ff/s1280x1920/6d2ee75dd9086602e1cf88321def56ef8e0a67b4.jpg') no-repeat 50%;
+  background-size: cover; 
 }
 .spaces{
   display: flex; 

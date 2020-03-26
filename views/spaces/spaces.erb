@@ -8,44 +8,46 @@
   </head>
 
 <body>
+<div class=spaces-page>
 <div class='spaces'>
 <% if @user %>
 <h1>Welcome, <%=@user.name%>!</h1>
 <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Log Out" class='button'/>
-  </form>
+<input type="submit" value="Log Out" class='button'/>
+</form>
 <form action="/spaces/new">
-    <input type="submit" value="Add Space" class='button'/>
-  </form>
+<input type="submit" value="Add Space" class='button'/>
+</form>
 <% end %>
 <div>
 <ol>
-  <% @spaces.each do |space| %>
-    <li class='form space'>
-    <ul>
-      <li class='item'>
-
-      <div class='row'>
-      <div class='col'>
-          <%= space.name %><br>
-          <%= space.description %><br>
-      </div>
-      <div class='col'>
-          £<%= space.price %> per night<br>
-          Available from<br>
-          <%= space.date_from %><br>
-          until
-          <%= space.date_to %>
-      </div>
-      </div>
-
-        </li>
-      </ul>
+<% @spaces.each do |space| %>
+  <li class='form space'>
+  <ul>
+  <li class='item'>
+  
+  <div class='row'>
+  <div class='col'>
+  <%= space.name %><br>
+  <%= space.description %><br>
+  </div>
+  <div class='col'>
+  £<%= space.price %> per night<br>
+  Available from<br>
+  <%= space.date_from %><br>
+  until
+    <%= space.date_to %>
+    </div>
+    </div>
+    
+    </li>
+    </ul>
     </li><br>
-  <% end %>
-</ol>
-</div>
-</div>
+    <% end %>
+    </ol>
+    </div>
+    </div>
+    </div>
 </body>
 
 </html>
