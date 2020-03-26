@@ -8,25 +8,25 @@
   </head>
 
 <body>
-<div>
+<div class='index-page'>
 
 <form class="form sign-in" action="/sessions" method="post">
 <h2 class='sign-in-header'>Log In</h2>
 <h2>
- <%= flash[:notice] %>
+<%= flash[:notice] %>
 </h2>
-  <input type="email" name="log_email" placeholder="Email"/>
-  <input type="password" name="log_password" placeholder="Password"/>
-  <input type="submit" value="Log In" class='button'/>
+<input type="email" name="log_email" placeholder="Email"/>
+<input type="password" name="log_password" placeholder="Password"/>
+<input type="submit" value="Log In" class='button'/>
 </form>
 
 <form class="form sign-up" action="/users" method="post">
 <h2>Create new account</h2>
-  <input type="text" name="name" placeholder="Your name"/>
-  <input type="text" name="username" placeholder="Username"/>
-  <input type="email" name="email" placeholder="Email"/>
-  <input type="password" name="password" placeholder="Password"/>
-  <input type="submit" value="Submit" class='button'/>
+<input type="text" name="name" placeholder="Your name"/>
+<input type="text" name="username" placeholder="Username"/>
+<input type="email" name="email" placeholder="Email"/>
+<input type="password" name="password" placeholder="Password"/>
+<input type="submit" value="Submit" class='button'/>
 </form>
 </div>
 </body>
