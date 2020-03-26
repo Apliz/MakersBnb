@@ -17,7 +17,7 @@ textarea {
   max-width: 300px
 }
 
-#page {
+.page {
   display: flex;
   justify-content: center;
   height: 70vh;
@@ -26,7 +26,7 @@ textarea {
   max-width: 450px;
 }
 
-#form {
+.form {
   width: 90vw;
   display: block;
   height: 70vh;
@@ -39,4 +39,29 @@ textarea {
   flex-direction: column;
   align-items: center;
   max-width: 550px;
+}
+.sign-in{
+  max-height: 280px;
+}
+.sign-up{
+  max-height: 400px;
+}
+.sign-in-header{
+  margin-bottom: -20px;
+}
+.space{
+  max-height: 200px;
+  max-width: 500px;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-left: -20px; */
+
+}
+/* .row > [class='col']{
+	padding-left: 20px;
+} */
+.col{
+  width: 50%;
 }
