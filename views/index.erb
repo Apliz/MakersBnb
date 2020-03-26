@@ -1,0 +1,17 @@
+<h2>Log In</h2>
+<h2>
+ <%= flash[:notice] %>
+</h2>
+<form action="/sessions" method="post">
+  <input type="email" name="log_email" placeholder="Email"/>
+  <input type="password" name="log_password" placeholder="Password"/>
+  <input type="submit" value="Log In" />
+</form>
+<h2>Create new account</h2>
+<form action="/users" method="post">
+  <input type="text" name="name" placeholder="Your name"/>
+  <input type="text" name="username" placeholder="Username"/>
+  <input type="email" name="email" placeholder="Email"/>
+  <input type="password" name="password" placeholder="Password"/>
+  <input type="submit" value="Submit" />
+</form>

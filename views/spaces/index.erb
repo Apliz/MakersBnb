@@ -1,0 +1,15 @@
+<div>
+<ol>
+  <% @space.each do |place| %>
+    <li>
+      <%= place.name %><br>
+      <ul>
+        <li>
+          <%= place.description %><br>
+          £<%= place.price %> p/Month
+        </li>
+      </ul>
+    </li><br>
+  <% end %>
+</ol>
+</div>
