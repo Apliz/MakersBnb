@@ -81,8 +81,14 @@ $ rspec
 
 # Diagrams
 The following diagrams are available in `./assets`
+
 * Class diagram
+
+![Makers B&B class diagram](./assets/class_diagram.png)
+
 * Table layout for databases
+
+![Makers B&B database template](./assets/table_layout.png)
 
 # Tools used during the project
 ## planning phase
