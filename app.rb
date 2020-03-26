@@ -1,6 +1,7 @@
 require "sinatra/base"
 require './lib/space'
 require './lib/user'
+require './lib/booking'
 require './database_connection_setup'
 require 'sinatra/flash'
 
@@ -61,8 +62,9 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/calendar" do
-    p date_start = Date.parse(params[:trip_start]).strftime('%Y-%m-%d')
-    p date_end = Date.parse(params[:trip_end]).strftime('%Y-%m-%d')
+    p @date_start = Date.parse(params[:trip_start]).strftime('%Y-%m-%d')
+    p @date_end = Date.parse(params[:trip_end]).strftime('%Y-%m-%d')
+    Booking.create(start_date: @date_start, end_date: @date_end)
     redirect :'spaces/calendar'
   end
 
