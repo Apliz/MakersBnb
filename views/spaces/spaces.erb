@@ -14,20 +14,38 @@
   </head>
 
 <body>
+
+
+<%# <div style="
+    border: 1px solid black;
+    height: 50px; display: flex; justify-content: space-between;"> 
+   <i class="fas fa-shipping-fast"></i> 
+   <div></div>
+   <div style="display: flex;">    
+   <form action="/spaces/new">
+    <input type="submit" value="Add Space" class='button'/>
+    </form>
+   <form action="/sessions/destroy" method="post">
+<input type="submit" value="Log Out" class='button'/>
+</form>
+</div> %>
+
+</div>
 <div class=spaces-page>
 <div class='spaces'>
 <% if @user %>
 <h1>Welcome, <%=@user.name%>!</h1>
-<form action="/sessions/destroy" method="post">
-<input type="submit" value="Log Out" class='button'/>
-</form>
-<form action="/spaces/new">
-<input type="submit" value="Add Space" class='button'/>
-</form>
 <% end %>
 <div>
+ <div style="display: flex;"> 
+   <form action="/spaces/new">
+    <input type="submit" value="Add Space" class='button'/>
+    </form>
+   <form action="/sessions/destroy" method="post">
+<input type="submit" value="Log Out" class='button'/>
+</form>
+</div>
 <ol>
-
 <% @spaces.each do |space| %>
   <li class='form space'>
   <ul>

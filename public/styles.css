@@ -99,8 +99,8 @@ ul{
 }
 
 .spaces{
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
