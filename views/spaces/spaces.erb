@@ -13,31 +13,14 @@
     />
   </head>
 
-<body>
-
-
-<%# <div style="
-    border: 1px solid black;
-    height: 50px; display: flex; justify-content: space-between;"> 
-   <i class="fas fa-shipping-fast"></i> 
-   <div></div>
-   <div style="display: flex;">    
-   <form action="/spaces/new">
-    <input type="submit" value="Add Space" class='button'/>
-    </form>
-   <form action="/sessions/destroy" method="post">
-<input type="submit" value="Log Out" class='button'/>
-</form>
-</div> %>
-
-</div>
-<div class=spaces-page>
-<div class='spaces'>
-<% if @user %>
-<h1 style="position: relative; top: 16px;">Welcome, <%=@user.name%>!</h1>
-<% end %>
-<div>
- <div style="display: flex;
+<body class="spaces-page">
+  <div>
+    <div class='spaces'>
+      <% if @user %>
+        <h1>Welcome, <%=@user.name%>!</h1>
+      
+      <div>
+        <div style="display: flex;
     position: absolute;
     right: 0%;
     top: 1%;
@@ -55,39 +38,56 @@
     top: 1%;
     padding: 5px"><i class="fas fa-bed fa-3x"></i>
     </div>
-<ol>
-<% @spaces.each do |space| %>
-  <li class='form space'>
-  <ul>
-  <li class='item'>
+        <ol>
+          <% @spaces.each do |space| %>
+            <li class='form space'>
+              <ul>
+                <li class='item'>
+
+                  <div class='row'>
+
+                    <div class='col'>
+                      <b><%= space.name %></b><br>
+                      <%= space.description %><br>
+                    </div>
+
+                    <div class='col'>
+                      £<%= space.price %> per night<br>
+                      Available from<br>
+                      <%= space.date_from %><br>
+                      until
+                      <%= space.date_to %>
+                    </div>
+
+                  </div>
+                </li>
+
+        <form class="form-calendar" action="/calendar" method="post">
+
+          <label for="start">Start date:</label>
+          <input type="date" id="start" name="trip_start"
+                value="<%= space.date_from %>"
+                min="<%= space.date_from %>" max="<%= space.date_to %>">
+
+          <label for="end">End date:</label>
+          <input type="date" id="end" name="trip_end"
+                value="<%= space.date_to %>"
+                min="<%= space.date_from %>" max="<%= space.date_to %>">
+                <br>
+
+          <input type="hidden" name="space_id" value="<%= space.id %>"/>
+          <input type="submit" name="Book" value="Book" class="button"/>
+        </form>
+
+              </ul>
+            </li><br>
+          <% end %>         
+        </ol>
+      </div>
+    </div>
+  </div>  
   
-  <div class='row'>
-  <div class='col'>
-  <%= space.name %><br>
-  <%= space.description %><br>
-  </div>
-  <div class='col'>
-  £<%= space.price %> per night<br>
-  Available from<br>
-  <%= space.date_from %><br>
-  until
-    <%= space.date_to %>
-    </div>
-    </div>
-    
-    </li>
-     <form action="/to_calendar" method="post">
-        <input type="hidden" name="space_id" value="<%= space.id %>"/>
-        <input type="submit" name="Book" value="Book"/>
-     </form>
-    </ul>
-    </li><br>
-    <% end %>
-    </ol>
-    </div>
-    </div>
-    </div>
-    <div style="display: flex; align-items: center; flex-direction: column; background: linear-gradient(360deg, #99AAAB, transparent);">
+<div style="display: flex; align-items: center; flex-direction: column; background: linear-gradient(360deg, #99AAAB, transparent);">
 <h3>Team members</h3>
 <div style="border-top: 1px solid black; height: 160px; display: flex; margin-top: 20px; justify-content: center; width: 70vw;">
 <div style="margin: 10px; display: flex; flex-direction: column; align-items: center;"><h4>Liam Roberts</h4><a href="https://github.com/lroberts77"><i class="fab fa-github"></i></a></div>

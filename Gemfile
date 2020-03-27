@@ -14,7 +14,7 @@ group :development, :test do
 end
 
 gem 'bcrypt'
-gem 'sinatra-flash'
 gem "pg"
 gem "sinatra"
+gem 'sinatra-flash'
 # TO DO add any more gems that we might need as required.
