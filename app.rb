@@ -13,7 +13,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get "/" do
-    erb :'index'
+    erb :index
   end
 
   post "/users" do
@@ -24,14 +24,14 @@ class MakersBnB < Sinatra::Base
       password: params['password']
       )
     session[:user_id] = user.id
-    redirect :'spaces'
+    redirect :spaces
   end
 
   post "/sessions" do
     user = User.authenticate(email: params[:log_email], password: params[:log_password])
     if user
       session[:user_id] = user.id
-      redirect :'spaces'
+      redirect :spaces
     else
       flash[:notice] = 'Please check your email or password.'
       redirect '/'
@@ -64,7 +64,7 @@ class MakersBnB < Sinatra::Base
       date_to: @date_to,
       user_id: session[:user_id]
       )
-    redirect :'spaces'
+    redirect :spaces
   end
 
   get "/spaces/calendar" do

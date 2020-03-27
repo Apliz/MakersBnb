@@ -34,5 +34,4 @@ feature 'authentication' do
     expect(page).not_to have_content 'Welcome, Liam Roberts'
   end
 
-
 end
