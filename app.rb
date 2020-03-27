@@ -54,12 +54,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/spaces" do
+    @date_from = Date.parse(params[:date_from]).strftime('%Y-%m-%d')
+    @date_to = Date.parse(params[:date_to]).strftime('%Y-%m-%d')
     Space.create(
       name: params[:name],
       description: params[:description],
       price: params[:price],
-      date_from: params[:date_from],
-      date_to: params[:date_to],
+      date_from: @date_from,
+      date_to: @date_to,
       user_id: session[:user_id]
       )
     redirect :'spaces'

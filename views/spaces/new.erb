@@ -15,8 +15,15 @@
     <h1>List your space</h1>
       <input type="text" name="name" placeholder="Name"/>
       <input type="text" name="price" placeholder="Price"/>
-      <input type="text" name="date_from" placeholder="Date From"/>
-      <input type="text" name="date_to" placeholder="Date To"/>
+      <label for="start">Start date:</label>
+          <input type="date" id='start' name="date_from"
+                value="<%= Date.today.strftime('%Y-%m-%d') %>"
+                min="<%= Date.today.strftime('%Y-%m-%d') %>" max="2020-12-31">
+
+          <label for="end">End date:</label>
+          <input type="date" id="end" name="date_to"
+                value="<%= Date.today.strftime('%Y-%m-%d') %>"
+                min="<%= Date.today.strftime('%Y-%m-%d') %>" max="2020-12-31">
       <textarea type="text" name="description" placeholder="Description" rows="8" cols="50"></textarea>
       <input type="submit" name="Submit" id="submit" class='button'/>
     </form>
