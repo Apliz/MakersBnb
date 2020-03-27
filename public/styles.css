@@ -157,3 +157,12 @@ label {
 .confirm {
   text-align: center;
 }
+
+.members-container {
+  border-top: 1px solid black; 
+  height: 160px; 
+  display: flex; 
+  margin-top: 20px; 
+  justify-content: center; 
+  width: 70vw;
+}
