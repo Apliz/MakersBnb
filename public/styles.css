@@ -62,7 +62,7 @@ textarea {
 }
 
 .space{
-  max-height: 200px;
+  max-height: 400px;
   max-width: 500px;
 }
 
@@ -99,8 +99,8 @@ ul{
 }
 
 .spaces{
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

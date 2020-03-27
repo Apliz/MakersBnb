@@ -71,7 +71,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/calendar" do
-    session[:space_id]
+    session[:space_id] = params[:space_id]
     session[:user_id]
     @date_start = Date.parse(params[:trip_start]).strftime('%Y-%m-%d')
     @date_end = Date.parse(params[:trip_end]).strftime('%Y-%m-%d')
@@ -81,13 +81,13 @@ class MakersBnB < Sinatra::Base
       space_id: session[:space_id],
       user_id: session[:user_id]
       )
-    redirect :'spaces/calendar'
+    redirect :'spaces'
   end
 
-  post '/to_calendar' do
-    session[:space_id] = params[:space_id]
-    redirect :'spaces/calendar'
-  end
+  # post '/to_calendar' do
+  #   session[:space_id] = params[:space_id]
+  #   redirect :'spaces/calendar'
+  # end
 
   run! if app_file == $0
 end
