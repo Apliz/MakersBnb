@@ -11,19 +11,22 @@
 
 <div class='add-new-space-page'>
   <div class='page'>
-    <form action="/spaces" method="post" class='form'>
+    <form action="/spaces" method="post" class='form form-centered'>
     <h1>List your space</h1>
       <input type="text" name="name" placeholder="Name"/>
       <input type="number" id="price" name="price" min="1" max="15000" placeholder="Price">
+      <div class="date">
       <label for="start">Start date:</label>
-          <input type="date" id='start' name="date_from"
+          <input class='calendar' type="date" id='start' name="date_from"
                 value="<%= Date.today.strftime('%Y-%m-%d') %>"
                 min="<%= Date.today.strftime('%Y-%m-%d') %>" max="2020-12-31">
-
+      </div>
+      <div class="date">
           <label for="end">End date:</label>
-          <input type="date" id="end" name="date_to"
+          <input class='calendar' type="date" id="end" name="date_to"
                 value="<%= Date.today.strftime('%Y-%m-%d') %>"
                 min="<%= Date.today.strftime('%Y-%m-%d') %>" max="2020-12-31">
+      </div>
       <textarea type="text" name="description" placeholder="Description" rows="8" cols="50"></textarea>
       <input type="submit" name="Submit" id="submit" class='button'/>
     </form>

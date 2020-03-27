@@ -17,12 +17,20 @@ input {
   margin-top: 20px;
   max-width: 300px;
   margin-bottom: 20px;
+  outline: none;
 }
 
 textarea {
-  width: 70vw;
   margin-top: 20px;
-  max-width: 300px
+  max-width: 300px;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
+  outline: none;
 }
 
 .page {
@@ -30,12 +38,12 @@ textarea {
   justify-content: center;
   align-items: center;
   padding: 50px;
-  max-width: 450px;
+  /* max-width: 450px; */
 }
 
 .form {
   background-color: rgba(255, 255, 255, 0.85);
-  width: 90vw;
+  width: 70vw;
   display: block;
   height: 70vh;
   padding: 5px 75px;
@@ -46,15 +54,16 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 550px;
+  max-width: 450px;
 }
 
 .sign-in{
-  max-height: 300px;
+  max-height: 250px;
+  margin-bottom: 30px;
 }
 
 .sign-up{
-  max-height: 450px;
+  max-height: 350px;
 }
 
 .sign-in-header{
@@ -69,6 +78,7 @@ textarea {
 .row{
   display: flex;
   flex-wrap: wrap;
+  min-width: 455px;
 }
 
 .col{
@@ -98,7 +108,7 @@ ul{
 .add-new-space-page{
   min-height: 100vh;
   background: rgba(255, 255, 255, 0) url('https://66.media.tumblr.com/1632de4cd77b2b8ff7086682539df863/234a6d217fc5e978-ff/s1280x1920/6d2ee75dd9086602e1cf88321def56ef8e0a67b4.jpg') no-repeat 50%;
-  background-size: cover; 
+  background-size: cover;
 }
 
 .spaces{
@@ -121,6 +131,7 @@ ul{
   padding: 10px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   max-width: 100px;
+  margin-top: 20px;
 }
 
 .button:hover{
@@ -137,4 +148,8 @@ label {
 input,
 label {
     margin: .4rem 0;
+}
+
+.form-calendar{
+  margin-top: 30px;
 }

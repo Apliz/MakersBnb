@@ -32,7 +32,7 @@
                   <div class='row'>
 
                     <div class='col'>
-                      <%= space.name %><br>
+                      <b><%= space.name %></b><br>
                       <%= space.description %><br>
                     </div>
 
@@ -47,7 +47,7 @@
                   </div>
                 </li>
 
-        <form action="/calendar" method="post">
+        <form class="form-calendar" action="/calendar" method="post">
 
           <label for="start">Start date:</label>
           <input type="date" id="start" name="trip_start"
