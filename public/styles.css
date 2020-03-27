@@ -135,3 +135,20 @@ input,
 label {
     margin: .4rem 0;
 }
+
+.outer-footer-container {
+  display: flex; 
+  align-items: center; 
+  flex-direction: column; 
+  background: linear-gradient(360deg, #99AAAB, transparent);
+}
+
+.members-container {
+  border-top: 1px solid black; 
+  height: 160px; 
+  display: flex; 
+  margin-top: 20px; 
+  justify-content: center; 
+  width: 70vw;
+}
+
