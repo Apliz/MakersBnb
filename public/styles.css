@@ -6,7 +6,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-html{
+html {
   height: 100%;
 }
 
@@ -57,44 +57,44 @@ textarea {
   max-width: 450px;
 }
 
-.sign-in{
+.sign-in {
   max-height: 250px;
   margin-bottom: 30px;
 }
 
-.sign-up{
+.sign-up {
   max-height: 350px;
 }
 
-.sign-in-header{
+.sign-in-header {
   margin-bottom: -20px;
 }
 
-.space{
+.space {
   max-height: 400px;
   max-width: 500px;
 }
 
-.row{
+.row {
   display: flex;
   flex-wrap: wrap;
   min-width: 455px;
 }
 
-.col{
+.col {
   width: 50%;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-.item{
+.item {
   min-width: 350px;
   margin-top: 30px;
 }
 
-.spaces-page{
+.spaces-page {
   height: 100%;
   width: 100%;
   min-height: 100vh;
@@ -105,27 +105,27 @@ ul{
   background-position: 50%;
 }
 
-.add-new-space-page{
+.add-new-space-page {
   min-height: 100vh;
   background: rgba(255, 255, 255, 0) url('https://66.media.tumblr.com/1632de4cd77b2b8ff7086682539df863/234a6d217fc5e978-ff/s1280x1920/6d2ee75dd9086602e1cf88321def56ef8e0a67b4.jpg') no-repeat 50%;
   background-size: cover;
 }
 
-.spaces{
+.spaces {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.index-page{
+.index-page {
   padding-top: 35px;
   min-height: 100vh;
   background: rgba(255, 255, 255, 0) url('https://66.media.tumblr.com/b460ec1391c561caa632fc2a7a18e548/tumblr_p5ci07RyQz1rnpavmo1_1280.jpg') no-repeat 50%;
   background-size: cover; 
 }
 
-.button{
+.button {
   display: inline-block;
   border-radius: 3px;
   padding: 10px;
@@ -134,7 +134,7 @@ ul{
   margin-top: 20px;
 }
 
-.button:hover{
+.button:hover {
   display: inline-block;
   border-radius: 3px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -150,10 +150,10 @@ label {
     margin: .4rem 0;
 }
 
-.form-calendar{
+.form-calendar {
   margin-top: 30px;
 }
 
-.confirm{
+.confirm {
   text-align: center;
 }
