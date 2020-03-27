@@ -5,9 +5,11 @@ body {
   min-height: 100%;
   font-family: "Roboto", sans-serif;
 }
+
 html{
   height: 100%;
 }
+
 input {
   padding: 10px;
   border-radius: 5px;
@@ -46,40 +48,42 @@ textarea {
   align-items: center;
   max-width: 550px;
 }
+
 .sign-in{
   max-height: 300px;
 }
+
 .sign-up{
   max-height: 450px;
 }
+
 .sign-in-header{
-  /* padding-top: 20px; */
   margin-bottom: -20px;
 }
+
 .space{
   max-height: 200px;
   max-width: 500px;
 }
+
 .row{
   display: flex;
   flex-wrap: wrap;
-  /* margin-left: -20px; */
-  
-
 }
-/* .row > [class='col']{
-	padding-left: 20px;
-} */
+
 .col{
   width: 50%;
 }
+
 ul{
   list-style: none;
 }
+
 .item{
   min-width: 350px;
   margin-top: 30px;
 }
+
 .spaces-page{
   height: 100%;
   width: 100%;
@@ -87,23 +91,27 @@ ul{
   background: rgba(255, 255, 255, 0) url('http://cdn.home-designing.com/wp-content/uploads/2015/08/attic-living-room.jpg') no-repeat 50%;
   background-size: cover; 
 }
+
 .add-new-space-page{
   min-height: 100vh;
   background: rgba(255, 255, 255, 0) url('https://66.media.tumblr.com/1632de4cd77b2b8ff7086682539df863/234a6d217fc5e978-ff/s1280x1920/6d2ee75dd9086602e1cf88321def56ef8e0a67b4.jpg') no-repeat 50%;
   background-size: cover; 
 }
+
 .spaces{
   display: flex; 
   flex-direction: column; 
   justify-content: center;
   align-items: center;
 }
+
 .index-page{
   padding-top: 35px;
   min-height: 100vh;
   background: rgba(255, 255, 255, 0) url('https://66.media.tumblr.com/b460ec1391c561caa632fc2a7a18e548/tumblr_p5ci07RyQz1rnpavmo1_1280.jpg') no-repeat 50%;
   background-size: cover; 
 }
+
 .button{
   display: inline-block;
   border-radius: 3px;
@@ -111,8 +119,19 @@ ul{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   max-width: 100px;
 }
+
 .button:hover{
   display: inline-block;
   border-radius: 3px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
 }
