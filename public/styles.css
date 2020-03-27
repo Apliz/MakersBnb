@@ -88,8 +88,11 @@ ul{
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  background: rgba(255, 255, 255, 0) url('http://cdn.home-designing.com/wp-content/uploads/2015/08/attic-living-room.jpg') no-repeat 50%;
+  background-image: url('http://cdn.home-designing.com/wp-content/uploads/2015/08/attic-living-room.jpg');
   background-size: cover; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
 }
 
 .add-new-space-page{
