@@ -1,30 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>MakersBnb</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+  </head>
+
+<body>
+<div class=spaces-page>
+<div class='spaces'>
 <% if @user %>
 <h1>Welcome, <%=@user.name%>!</h1>
 <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Log Out" />
-  </form>
+<input type="submit" value="Log Out" class='button'/>
+</form>
 <form action="/spaces/new">
-    <input type="submit" value="Add Space" />
-  </form>
+<input type="submit" value="Add Space" class='button'/>
+</form>
 <% end %>
 <div>
 <ol>
-  <% @spaces.each do |space| %>
-    <li>
-      <%= space.name %><br>
-      <ul>
-        <li>
-          <%= space.description %><br>
-          £<%= space.price %> p/night<br>
-          <%= space.date_from %><br>
-          <%= space.date_to %>
-        </li>
-        <form action="/to_calendar" method="post">
-          <input type="hidden" name="space_id" value="<%= space.id %>"/>
-          <input type="submit" name="Book" value="Book"/>
-        </form>
-      </ul>
+
+<% @spaces.each do |space| %>
+  <li class='form space'>
+  <ul>
+  <li class='item'>
+  
+  <div class='row'>
+  <div class='col'>
+  <%= space.name %><br>
+  <%= space.description %><br>
+  </div>
+  <div class='col'>
+  £<%= space.price %> per night<br>
+  Available from<br>
+  <%= space.date_from %><br>
+  until
+    <%= space.date_to %>
+    </div>
+    </div>
+    
+    </li>
+     <form action="/to_calendar" method="post">
+        <input type="hidden" name="space_id" value="<%= space.id %>"/>
+        <input type="submit" name="Book" value="Book"/>
+     </form>
+    </ul>
     </li><br>
-  <% end %>
-</ol>
-</div>
+    <% end %>
+    </ol>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

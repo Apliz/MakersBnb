@@ -4,5 +4,5 @@ CREATE TABLE users
   name VARCHAR(100),
   username VARCHAR(50),
   email VARCHAR(75),
-  password VARCHAR(20)
+  password VARCHAR(100)
 );
