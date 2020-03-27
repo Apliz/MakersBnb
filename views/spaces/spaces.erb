@@ -15,10 +15,14 @@
       <ul>
         <li>
           <%= space.description %><br>
-          £<%= space.price %> p/Nanosecond<br>
+          £<%= space.price %> p/night<br>
           <%= space.date_from %><br>
           <%= space.date_to %>
         </li>
+        <form action="/to_calendar" method="post">
+          <input type="hidden" name="space_id" value="<%= space.id %>"/>
+          <input type="submit" name="Book" value="Book"/>
+        </form>
       </ul>
     </li><br>
   <% end %>
