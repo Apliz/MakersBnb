@@ -7,52 +7,70 @@
     <link rel="stylesheet" href="/styles.css" type="text/css">
   </head>
 
-<body>
-<div class=spaces-page>
-<div class='spaces'>
-<% if @user %>
-<h1>Welcome, <%=@user.name%>!</h1>
-<form action="/sessions/destroy" method="post">
-<input type="submit" value="Log Out" class='button'/>
-</form>
-<form action="/spaces/new">
-<input type="submit" value="Add Space" class='button'/>
-</form>
-<% end %>
-<div>
-<ol>
+<body class="spaces-page">
+  <div>
+    <div class='spaces'>
+      <% if @user %>
+        <h1>Welcome, <%=@user.name%>!</h1>
 
-<% @spaces.each do |space| %>
-  <li class='form space'>
-  <ul>
-  <li class='item'>
-  
-  <div class='row'>
-  <div class='col'>
-  <%= space.name %><br>
-  <%= space.description %><br>
+        <form action="/sessions/destroy" method="post">
+          <input type="submit" value="Log Out" class='button'/>
+        </form>
+
+        <form action="/spaces/new">
+          <input type="submit" value="Add Space" class='button'/>
+        </form>
+      <% end %>
+
+      <div>
+        <ol>
+          <% @spaces.each do |space| %>
+            <li class='form space'>
+              <ul>
+                <li class='item'>
+
+                  <div class='row'>
+
+                    <div class='col'>
+                      <b><%= space.name %></b><br>
+                      <%= space.description %><br>
+                    </div>
+
+                    <div class='col'>
+                      £<%= space.price %> per night<br>
+                      Available from<br>
+                      <%= space.date_from %><br>
+                      until
+                      <%= space.date_to %>
+                    </div>
+
+                  </div>
+                </li>
+
+        <form class="form-calendar" action="/calendar" method="post">
+
+          <label for="start">Start date:</label>
+          <input type="date" id="start" name="trip_start"
+                value="<%= space.date_from %>"
+                min="<%= space.date_from %>" max="<%= space.date_to %>">
+
+          <label for="end">End date:</label>
+          <input type="date" id="end" name="trip_end"
+                value="<%= space.date_to %>"
+                min="<%= space.date_from %>" max="<%= space.date_to %>">
+                <br>
+
+          <input type="hidden" name="space_id" value="<%= space.id %>"/>
+          <input type="submit" name="Book" value="Book" class="button"/>
+        </form>
+
+              </ul>
+            </li><br>
+          <% end %>
+        </ol>
+      </div>
+    </div>
   </div>
-  <div class='col'>
-  £<%= space.price %> per night<br>
-  Available from<br>
-  <%= space.date_from %><br>
-  until
-    <%= space.date_to %>
-    </div>
-    </div>
-    
-    </li>
-     <form action="/to_calendar" method="post">
-        <input type="hidden" name="space_id" value="<%= space.id %>"/>
-        <input type="submit" name="Book" value="Book"/>
-     </form>
-    </ul>
-    </li><br>
-    <% end %>
-    </ol>
-    </div>
-    </div>
-    </div>
 </body>
 
 </html>

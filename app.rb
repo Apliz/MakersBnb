@@ -13,7 +13,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get "/" do
-    erb :'index'
+    erb :index
   end
 
   post "/users" do
@@ -24,14 +24,14 @@ class MakersBnB < Sinatra::Base
       password: params['password']
       )
     session[:user_id] = user.id
-    redirect :'spaces'
+    redirect :spaces
   end
 
   post "/sessions" do
     user = User.authenticate(email: params[:log_email], password: params[:log_password])
     if user
       session[:user_id] = user.id
-      redirect :'spaces'
+      redirect :spaces
     else
       flash[:notice] = 'Please check your email or password.'
       redirect '/'
@@ -54,15 +54,17 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/spaces" do
+    @date_from = Date.parse(params[:date_from]).strftime('%Y-%m-%d')
+    @date_to = Date.parse(params[:date_to]).strftime('%Y-%m-%d')
     Space.create(
       name: params[:name],
       description: params[:description],
       price: params[:price],
-      date_from: params[:date_from],
-      date_to: params[:date_to],
+      date_from: @date_from,
+      date_to: @date_to,
       user_id: session[:user_id]
       )
-    redirect :'spaces'
+    redirect :spaces
   end
 
   get "/spaces/calendar" do
@@ -71,7 +73,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post "/calendar" do
-    session[:space_id]
+    session[:space_id] = params[:space_id]
     session[:user_id]
     @date_start = Date.parse(params[:trip_start]).strftime('%Y-%m-%d')
     @date_end = Date.parse(params[:trip_end]).strftime('%Y-%m-%d')
@@ -81,12 +83,7 @@ class MakersBnB < Sinatra::Base
       space_id: session[:space_id],
       user_id: session[:user_id]
       )
-    redirect :'spaces/calendar'
-  end
-
-  post '/to_calendar' do
-    session[:space_id] = params[:space_id]
-    redirect :'spaces/calendar'
+    erb :'spaces/confirmation'
   end
 
   run! if app_file == $0

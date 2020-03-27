@@ -26,7 +26,6 @@ describe Space do
     end
   end
 
-
   describe '.all' do
     it 'returns all spaces' do
       user = User.create(name: 'Liam Roberts', username: 'jalapeno', email: 'jalapeno@gmail.com', password: '123')
