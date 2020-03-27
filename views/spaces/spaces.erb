@@ -34,17 +34,27 @@
 <div class=spaces-page>
 <div class='spaces'>
 <% if @user %>
-<h1>Welcome, <%=@user.name%>!</h1>
+<h1 style="position: relative; top: 16px;">Welcome, <%=@user.name%>!</h1>
 <% end %>
 <div>
- <div style="display: flex;"> 
-   <form action="/spaces/new">
+ <div style="display: flex;
+    position: absolute;
+    right: 0%;
+    top: 1%;
+    padding: 5px"> 
+   <form action="/spaces/new" style="padding: 0px 9px;">
     <input type="submit" value="Add Space" class='button'/>
     </form>
    <form action="/sessions/destroy" method="post">
 <input type="submit" value="Log Out" class='button'/>
 </form>
 </div>
+<div style="
+    position: absolute;
+    left: 0%;
+    top: 1%;
+    padding: 5px"><i class="fas fa-bed fa-3x"></i>
+    </div>
 <ol>
 <% @spaces.each do |space| %>
   <li class='form space'>

@@ -100,9 +100,10 @@ ul{
 
 .spaces{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 40px;
 }
 
 .index-page{
