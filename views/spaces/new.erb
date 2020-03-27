@@ -5,10 +5,34 @@
     <meta charset="UTF-8">
     <title>MakersBnb</title>
     <link rel="stylesheet" href="/styles.css" type="text/css">
+        <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+      integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN"
+      crossorigin="anonymous"
+    />
+  
   </head>
 
 <body>
 
+<div style="display: flex;
+    position: absolute;
+    right: 0%;
+    top: 1%;
+    padding: 5px"> 
+   <form action="/sessions/destroy" method="post">
+   <input type="submit" value="Log Out" class='button'/>
+</form>
+</div>
+  
+<div style="
+    position: absolute;
+    left: 0%;
+    top: 1%;
+    padding: 5px"><i class="fas fa-bed fa-3x"></i>
+</div>
+  
 <div class='add-new-space-page'>
   <div class='page'>
     <form action="/spaces" method="post" class='form form-centered'>
@@ -31,6 +55,27 @@
       <input type="submit" name="Submit" id="submit" class='button'/>
     </form>
   </div>
+</div>
+  
+<div style="display: flex; align-items: center; flex-direction: column; background: linear-gradient(360deg, #99AAAB, transparent);">
+<h3>Team members</h3>
+<div style="border-top: 1px solid black; height: 160px; display: flex; margin-top: 20px; justify-content: center; width: 70vw;">
+<div style="margin: 10px; display: flex; flex-direction: column; align-items: center;"><h4>Liam Roberts</h4><a href="https://github.com/lroberts77"><i class="fab fa-github"></i></a></div>
+
+<div style="margin: 10px; display: flex; flex-direction: column; align-items: center;"><h4>Daria Thompson</h4><a href="https://github.com/dariathompson"><i class="fab fa-github"></i></a></div>
+
+<div style="margin: 10px; display: flex; flex-direction: column; align-items: center;"><h4>Nima Soufiani</h4><a href="https://github.com/nimzyow"><i class="fab fa-github"></i></a></div>
+
+<div style="margin: 10px; display: flex; flex-direction: column; align-items: center;"><h4>Anton Plisnier</h4><a href="https://github.com/apliz"><i class="fab fa-github"></i></a></div>
+
+<div style="margin: 10px; display: flex; flex-direction: column; align-items: center;"><h4>Lila Walker</h4><a href="https://github.com/lilawalker"><i class="fab fa-github"></i></a></div>
+
+<div style="margin: 10px; display: flex; flex-direction: column; align-items: center;"><h4>John Baxter</h4><a href="https://github.com/john-baxter"><i class="fab fa-github"></i></a></div>
+
+</div>
+<div style="border-top: 1px solid black; height: 100px; display: flex; margin-top: 20px; justify-content: center; width: 70vw;">
+<h4><i class="far fa-copyright"></i> MakersBnb, Inc. All rights reserved</h4>
+</div>
 </div>
 
 </body>

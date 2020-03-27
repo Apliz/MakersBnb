@@ -116,9 +116,11 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 40px;
 }
 
 .index-page {
+  padding-bottom: 35px;
   padding-top: 35px;
   min-height: 100vh;
   background: rgba(255, 255, 255, 0) url('https://66.media.tumblr.com/b460ec1391c561caa632fc2a7a18e548/tumblr_p5ci07RyQz1rnpavmo1_1280.jpg') no-repeat 50%;
