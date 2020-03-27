@@ -83,13 +83,8 @@ class MakersBnB < Sinatra::Base
       space_id: session[:space_id],
       user_id: session[:user_id]
       )
-    redirect :'spaces'
+    erb :'spaces/confirmation'
   end
-
-  # post '/to_calendar' do
-  #   session[:space_id] = params[:space_id]
-  #   redirect :'spaces/calendar'
-  # end
 
   run! if app_file == $0
 end
